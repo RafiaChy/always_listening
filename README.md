@@ -20,7 +20,7 @@ My code is reusable in the sense that updating figma should not affect the UI
 
 I wanted to follow up on my recent email regarding some queries I had about JSON response. I am getting the error :CERTIFICATE_VERIFY_FAILED: self signed certificate(handshake.cc:393)
 
-##What did I do to solve?
+What did I do to solve?
 
 Steps to Follow from https://stackoverflow.com/questions/54285172/how-to-solve-flutter-certificate-verify-failed-error-while-performing-a-post-req
 Download the Certificate:
