@@ -10,12 +10,14 @@ abstract class RemoteDataSource {
 class RemoteDataSourceImplementer implements RemoteDataSource {
   final HttpNetworkServices httpNetworkServices;
   final String authorization = "Authorization";
-
+  final String contentType = "Content-Type";
+  final String multiPartData = "multipart/form-data";
   RemoteDataSourceImplementer(this.httpNetworkServices);
 
   Future<Map<String, String>> setHeader() async {
     Map<String, String> headers;
     headers = {
+      contentType: multiPartData,
       authorization: 'Bearer ${AppEnvironments.bearerToken}',
     };
     return headers;

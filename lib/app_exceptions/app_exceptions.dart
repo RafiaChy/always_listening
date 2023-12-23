@@ -95,33 +95,33 @@ extension DataSourceExtension on DataSource {
   Failure getFailure({String? message}) {
     switch (this) {
       case DataSource.BAD_REQUEST:
-        return Failure(ResponseCode.BAD_REQUEST, StringsManager.serverError.trim(),false);
+        return Failure(ResponseCode.BAD_REQUEST, message.toString(),false);
       case DataSource.FORBIDDEN:
-        return Failure(ResponseCode.FORBIDDEN, StringsManager.serverError.trim(),false);
+        return Failure(ResponseCode.FORBIDDEN, message.toString(),false);
       case DataSource.UNAUTHORISED:
         return Failure(ResponseCode.UNAUTHORISED, StringsManager.unauthorizedMsg.trim(),false);
       case DataSource.NOT_FOUND:
-        return Failure(ResponseCode.NOT_FOUND, StringsManager.serverError.trim(),false);
+        return Failure(ResponseCode.NOT_FOUND, message.toString(),false);
       case DataSource.INTERNAL_SERVER_ERROR:
         return Failure(ResponseCode.INTERNAL_SERVER_ERROR,
-            StringsManager.serverError.trim(),false);
+            message.toString(),false);
       case DataSource.CONNECT_TIMEOUT:
         return Failure(
             ResponseCode.CONNECT_TIMEOUT, ResponseMessage.CONNECT_TIMEOUT.trim(),false);
       case DataSource.CANCEL:
-        return Failure(ResponseCode.CANCEL, StringsManager.serverError.trim(),false);
+        return Failure(ResponseCode.CANCEL, message.toString(),false);
       case DataSource.RECEIVE_TIMEOUT:
         return Failure(
-            ResponseCode.RECEIVE_TIMEOUT, StringsManager.serverError.trim(),false);
+            ResponseCode.RECEIVE_TIMEOUT, message.toString(),false);
       case DataSource.SEND_TIMEOUT:
-        return Failure(ResponseCode.SEND_TIMEOUT, StringsManager.serverError.trim(),false);
+        return Failure(ResponseCode.SEND_TIMEOUT, message.toString(),false);
       case DataSource.CACHE_ERROR:
-        return Failure(ResponseCode.CACHE_ERROR, StringsManager.serverError.trim(),false);
+        return Failure(ResponseCode.CACHE_ERROR, message.toString(),false);
       case DataSource.NO_INTERNET_CONNECTION:
         return Failure(ResponseCode.NO_INTERNET_CONNECTION,
             ResponseMessage.NO_INTERNET_CONNECTION.trim(),false);
       case DataSource.DEFAULT:
-        return Failure(ResponseCode.DEFAULT, StringsManager.serverError,false);
+        return Failure(ResponseCode.DEFAULT, ResponseCode.DEFAULT.toString(),false);
       case DataSource.SUCCESS:
         return Failure(ResponseCode.SUCCESS, message!,false);
       default:

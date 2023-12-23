@@ -33,9 +33,8 @@ class RepositoryImpl extends Repository {
         if (response.statusCode == 200) {
           return Right(model);
         } else {
-          return (Left(AppExceptions.handle(response.statusCode.toString(),
-              context: navigatorKey.currentContext)
-              .failure));
+          return Left(
+              Failure(0, model.responseData.message!, response.status));
         }
       } catch (error) {
         return (Left(AppExceptions.handle(error).failure));

@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +16,8 @@ Future<void>  mainDelegateForEnvironments() async {
   WidgetsFlutterBinding.ensureInitialized();
   await initAppModule();
   await ScreenUtil.ensureScreenSize();
-
+  ByteData data = await PlatformAssetBundle().load('assets/ca/lets-encrypt-r3.pem');
+  SecurityContext.defaultContext.setTrustedCertificatesBytes(data.buffer.asUint8List());
   runApp( RootApp());
 }
 
