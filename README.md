@@ -1,5 +1,4 @@
-# Project Title
-
+# Always Listening
 ## Introduction
 
 Welcome to Always Listening! 
@@ -21,7 +20,7 @@ My code is reusable in the sense that updating figma should not affect the UI
 
 I wanted to follow up on my recent email regarding some queries I had about JSON response. I am getting the error :CERTIFICATE_VERIFY_FAILED: self signed certificate(handshake.cc:393)
 
-##What did I do to solve?
+What did I do to solve?
 
 Steps to Follow from https://stackoverflow.com/questions/54285172/how-to-solve-flutter-certificate-verify-failed-error-while-performing-a-post-req
 Download the Certificate:
@@ -60,7 +59,6 @@ import 'package:flutter/services.dart';
 void main() async {
 WidgetsFlutterBinding.ensureInitialized();
 
-// Load the SSL certificate
 ByteData data = await rootBundle.load('assets/ca/lets-encrypt-r3.pem');
 SecurityContext.defaultContext.setTrustedCertificatesBytes(data.buffer.asUint8List());
 
@@ -73,7 +71,7 @@ I am open to collaboration and constructive feedback from the team. If there are
 
 ## Conclusion
 
-Thank you for understanding my commitment to delivering a top-notch Kotlin application. I am dedicated to continuous improvement, and with your support, I will quickly acquire the necessary skills to implement TDD effectively.
+Thank you for understanding my commitment to delivering a top-notch Flutter application. I am dedicated to continuous improvement, and with your support, I will quickly acquire the necessary skills to implement TDD effectively.
 
 Let's leverage my strong suit in Flutter to create something remarkable together!
 
