@@ -60,7 +60,6 @@ import 'package:flutter/services.dart';
 void main() async {
 WidgetsFlutterBinding.ensureInitialized();
 
-// Load the SSL certificate
 ByteData data = await rootBundle.load('assets/ca/lets-encrypt-r3.pem');
 SecurityContext.defaultContext.setTrustedCertificatesBytes(data.buffer.asUint8List());
 
@@ -73,7 +72,7 @@ I am open to collaboration and constructive feedback from the team. If there are
 
 ## Conclusion
 
-Thank you for understanding my commitment to delivering a top-notch Kotlin application. I am dedicated to continuous improvement, and with your support, I will quickly acquire the necessary skills to implement TDD effectively.
+Thank you for understanding my commitment to delivering a top-notch Flutter application. I am dedicated to continuous improvement, and with your support, I will quickly acquire the necessary skills to implement TDD effectively.
 
 Let's leverage my strong suit in Flutter to create something remarkable together!
 
