@@ -79,3 +79,5 @@ Let's leverage my strong suit in Flutter to create something remarkable together
 
 Best regards,
 Rafia
+Below the app records in foreground however, there is a failure response from api-trigger
+![img.png](img.png)
