@@ -22,13 +22,12 @@ class HomeView extends StatelessWidget {
         create: (context) => _homeBloc..add(TriggerListenEvent()),
         child: BlocListener<HomeBloc, HomeUpdateState>(
           listener: (context, state) {
-            if(state.isError){
+            if (state.isError) {
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
                   backgroundColor: ColorManager.feedBackError,
                   content: Text(state.errorMessage),
                   duration: const Duration(seconds: 2),
-
                 ),
               );
             }
@@ -65,10 +64,7 @@ class HomeView extends StatelessWidget {
                       Align(
                         alignment: Alignment.center,
                         child: SizedBox(
-                          height: 62.h,
-                          width: 97.w,
-                          child: Stack(
-                            alignment: Alignment.bottomCenter,
+                          child: Column(
                             children: [
                               Align(
                                 alignment: Alignment.topCenter,
@@ -88,7 +84,7 @@ class HomeView extends StatelessWidget {
                           ),
                         ),
                       ),
-                      SizedBox(height: 53.h),
+                      SizedBox(height: 2.h),
                       Padding(
                         padding: EdgeInsets.only(left: 1.w),
                         child: Text(
@@ -96,55 +92,37 @@ class HomeView extends StatelessWidget {
                           style: StyleManager.subHeadersStyle(),
                         ),
                       ),
-                      SizedBox(height: 2.w),
-                      Container(
-                        width: 309.h,
-                        margin: EdgeInsets.only(
-                          left: 1.w,
-                          right: 11.w,
-                        ),
-                        child: Text(
-                          StringsManager.greet_and_check,
-                          maxLines: 2,
-                          overflow: TextOverflow.ellipsis,
-                          style: StyleManager.promptsStyle(),
-                        ),
+                      SizedBox(height: 2.h),
+
+                      SizedBox(
+
+                        height: 280.h,
+                        child: ListView.separated(
+                            scrollDirection: Axis.vertical,
+                            itemBuilder: (context, index) {
+                              Container(
+                                margin: EdgeInsets.only(
+                                  left: 1.w,
+                                  right: 11.w,
+                                ),
+                                child: Text(
+                                  state.transcripts[index],
+                                  maxLines: 2,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: StyleManager.promptsStyle(),
+                                ),
+                              );
+                            },
+                            separatorBuilder: (context, index) {
+                              return
+                                Divider(
+                                thickness: 2,
+                                color: ColorManager.textColor,
+                              );
+                            },
+                            itemCount: state.transcripts.length
+                            ),
                       ),
-                      SizedBox(height: 10.h),
-                      Divider(
-                        indent: 1.h,
-                      ),
-                      SizedBox(height: 12.h),
-                      Container(
-                        width: 266.h,
-                        margin: EdgeInsets.only(
-                          left: 1.h,
-                          right: 54.h,
-                        ),
-                        child: Text(
-                          StringsManager.prompt_for_second_attempt,
-                          maxLines: 2,
-                          overflow: TextOverflow.ellipsis,
-                          style: StyleManager.promptsStyle(),
-                        ),
-                      ),
-                      SizedBox(height: 9.h),
-                      Divider(),
-                      SizedBox(height: 16.h),
-                      Container(
-                        width: 315.h,
-                        margin: EdgeInsets.only(
-                          left: 1.h,
-                          right: 5.h,
-                        ),
-                        child: Text(
-                          StringsManager.prompt_for_first_attempt,
-                          maxLines: 2,
-                          overflow: TextOverflow.ellipsis,
-                          style: StyleManager.promptsStyle(),
-                        ),
-                      ),
-                      SizedBox(height: 5.h),
                     ],
                   ),
                 ),
@@ -156,6 +134,5 @@ class HomeView extends StatelessWidget {
     );
   }
 
-/// Section Widget
-
+  /// Section Widget
 }

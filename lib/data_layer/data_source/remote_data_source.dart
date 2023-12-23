@@ -25,8 +25,12 @@ class RemoteDataSourceImplementer implements RemoteDataSource {
   Future<dynamic> sendAudio({required String filePath}) async {
 
     final response = await httpNetworkServices.postMultiPartResponse(
+      bodyData: filePath,
         url: '${AppEnvironments.baseUrl}${UrlManager.sendAudioUrlSuffix}',
         header: await setHeader());
+    print('response here ');
+    print(response.statusCode);
+    print(response.body);
     return response;
   }
 

@@ -13,7 +13,7 @@ class HomeUpdateState with _$HomeUpdateState {
 
   factory HomeUpdateState.initial() => const HomeUpdateState(
     counter: 0,
-      transcripts: [],
+      transcripts: ['hello'],
       isError: false,
     errorMessage: ""
    );

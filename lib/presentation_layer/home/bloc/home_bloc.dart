@@ -77,7 +77,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeUpdateState> {
         final dir = await getApplicationDocumentsDirectory();
         audioPath = p.join(
           dir.path,
-          'audio_${DateTime.now().millisecondsSinceEpoch}.m4a',
+          'audio_${DateTime.now().millisecondsSinceEpoch}.wav',
         );
 
         await audioRecorder.start(config, path: audioPath!);

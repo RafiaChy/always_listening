@@ -12,19 +12,20 @@ class HttpNetworkServices {
        required Map<String, String> header}) async {
 
     final request = http.MultipartRequest("POST", Uri.parse(url));
-    request.files.add(bodyData);
+    var file = await http.MultipartFile.fromPath('file', bodyData);
+    request.files.add(file);
     request.headers.addAll(header);
-    request.fields.addAll(bodyData!);
+
     try {
       var responseStream = await request.send();
       final response = await http.Response.fromStream(responseStream);
-
       debugPrint("Post Multipart Response : --> ${response}");
       if (response.statusCode == 200) {
         return response;
       }else{
         return null;
       }
+
     } catch (e) {
       debugPrint("Something went wrong : --> ${e.toString()}");
     }

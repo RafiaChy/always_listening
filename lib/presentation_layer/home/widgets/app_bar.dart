@@ -19,9 +19,12 @@ PreferredSizeWidget buildAppBar(BuildContext context) {
         bottom: 8.h,
       ),
     ),
-    title: Text(
-      StringsManager.appBarText,
-     style: StyleManager.appBarTextStyle(),
+    title: Padding(
+      padding: const EdgeInsets.only(left: 9.0),
+      child: Text(
+        StringsManager.appBarText,
+       style: StyleManager.appBarTextStyle(),
+      ),
     ),
     actions: [
       AppbarTrailingImage(

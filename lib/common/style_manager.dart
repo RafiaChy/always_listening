@@ -7,19 +7,19 @@ import 'color_manager.dart';
 class StyleManager{
   static TextStyle appBarTextStyle({Color? preferredColor}) {
     return GoogleFonts.roboto(
-      color: ColorManager.textColor,
+      color: preferredColor ?? ColorManager.textColor,
       fontWeight: FontWeight.w500,
       fontSize: 20.sp
     );
   }  static TextStyle appTitleStyle({Color? preferredColor}) {
     return GoogleFonts.roboto(
-      color: ColorManager.textColor,
+      color: preferredColor ?? ColorManager.textColor,
       fontWeight: FontWeight.w500,
       fontSize: 20.sp
     );
   }  static TextStyle subHeadersStyle({Color? preferredColor}) {
     return GoogleFonts.roboto(
-      color: ColorManager.textColor,
+      color:preferredColor ?? ColorManager.textColor,
       fontWeight: FontWeight.w500,
       fontSize: 14.sp
     );
@@ -27,14 +27,14 @@ class StyleManager{
 
   static TextStyle promptsStyle({Color? preferredColor}) {
     return GoogleFonts.roboto(
-      color: ColorManager.textColor,
+      color: preferredColor ?? ColorManager.textColor,
       fontWeight: FontWeight.w500,
       fontSize: 16.sp
     );
   }
   static TextStyle counterStyle({Color? preferredColor}) {
     return GoogleFonts.roboto(
-      color: ColorManager.textColor,
+      color: preferredColor ?? ColorManager.textColor,
       fontWeight: FontWeight.w500,
       fontSize: 40.sp
     );
